@@ -1,0 +1,36 @@
+A distributed computing application consists of multiple programs running on multiple computers that together coordinate to perform some task. 
+
+The internet Protocal(IP) specifies how to transfer packets of data among networks. 
+- Networks are inherently unreliable at any point.
+- The structure of a network is dynamic, not fixed
+- No system exists to monitor or track communication.
+
+The design of the Internet Protocal (IPv4) imposes constraints:
+- Packets are limited to 65,535 bytes each.
+- Packets may arrive in a different order than they were sent.
+- Packets may be duplicated or lost.
+
+The Transmission Control Protocal (TCP) improve reliability.
+(The socket module in Python implements the TCP.)
+
+All TCP connections begin with a sequence of messages called a "handshake" which verifies that communication is possible.
+
+Handshake Goals:
+- computer A knows that it can send data to and receive data from computer B.
+- computer B knows that it can send data to and receive data from computer A. 
+- Lots of seperate connections can exist without any confusion.
+- The number of required messages is minimized.
+
+The Hypertext Transfer Protocol (HTTP) 
+- A protocol designed to implement a Client/Server architecture
+Benefits:
+1. Creates a separation of concerns among components.
+2. Enforces an abstraction barrier between clients and server.
+3. A centralized server can reuse computation across clients.
+Liabilities:
+1. A single point of failure: the server.
+2. Computing resources become scarce when demand increases.
+
+The Peer-to-Peet Architecture:
+All participants in a distributed application contribute computational resources: processing, storage, and network capacity.
+

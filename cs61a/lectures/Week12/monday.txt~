@@ -1,0 +1,19 @@
+Important ideas in big data processing.
+- Implicit representation of streams of sequential data taht does not explicitly store each element.
+- Declarative programming languages to manipulate and transfrom data
+- Distributed and parallel computing.
+
+
+An iterator is an object that can provide the next element of a sequence.
+The __next__ method of an iterator returns the next element.
+The build-in next function invokes the __next__ methond on its argument.
+
+map(func, iterable): iterate over fun(x) for x in iterable
+filter(func, iterbale): iterate over x in iterable if func(x)
+zip(first_iter, second_iter): iterate over co-indexed (x, y) pairs
+reversed(seequence): iterate over x in a sequence in reverse order
+list(iterable)
+tuple(iterable)
+sorted(iterable)
+
+

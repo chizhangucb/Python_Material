@@ -1,0 +1,35 @@
+1. How to install packages in python
+
+You have to install pip first & use pip3.
+
+https://packaging.python.org/tutorials/installing-packages/
+
+2. How to install package pyautogui?
+
+https://stackoverflow.com/questions/35074294/pip3-install-pyautogui-fails-with-error-code-1-mac-os?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+https://github.com/n1nj4sec/pupy/issues/540
+
+Step0. Install Xcode from the Mac App Store. This is a requirement for installing PyObjC. https://pythonhosted.org/pyobjc/install.html
+Step1. sudo pip3 install pyobjc-core
+Step2. sudo pip3 install pyobjc
+Step3. sudo pip3 install Pillow
+Step4. sudo pip3 install pyautogui
+
+3. How to clear PyCharm run window?
+
+https://stackoverflow.com/questions/27241268/clear-pycharm-run-window?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+If you set the keyboard shortcut for 'clear all' to Command + L use this in your python script:
+
+import pyautogui
+pyautogui.hotkey('command', 'l')
+
+
+4. Why apt-get: command not found?
+
+https://stackoverflow.com/questions/32592956/apt-get-command-not-found?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+5. How to download file from Web in Python 3?
+
+https://stackoverflow.com/questions/7243750/download-file-from-web-in-python-3?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa

@@ -1,0 +1,24 @@
+MapReduce is a framework for batch processing of Big Data.
+
+- Framework: A system used by programmers to build applications.
+- Batch processing: All the data is available at the outset, and results aren't used until processing completes.
+- Big Data: Used to describte data sets so large that they can reveal new facts about the world, usually from statistical analysis.
+
+The mapreduce idea:
+- data sets are too big to be analyzed by one machine.
+- using multiple machines has the same complications, regardless of the application.
+- pure functions enable an abstraction barrier between data processing logic and coordinating a distributed application.
+
+Constraints on the mapper and reducer:
+- The mapper must be equivalent to applying a deterministic pure function to each input independently.
+- The reducer must be equivalent to applying a deterministic pure function to the sequence of values for each key.
+
+What does the MapReduce Framework Provide?
+1. Fault tolerance: A machine or hard drive might crash
+- The MapReduce framework automatically re-runs failed tasks.
+2. Speed: some machine might be slow because it's overloaded
+- The framework can run multiple copies of a task and keep the result of the one that finishes first.
+3. Network locality: data transfer is expensive.
+- The framework tries to schedule map tasks on the machines that hold the data to be processed.
+4, Monitoring:
+- The framework provides a web-based interface describing jobs.

@@ -1,0 +1,85 @@
+-- CS 61A Fall 2014
+-- Name: Chi Zhang
+-- Login:
+
+create table parents as
+  select "abraham" as parent, "barack" as child union
+  select "abraham"          , "clinton"         union
+  select "delano"           , "herbert"         union
+  select "fillmore"         , "abraham"         union
+  select "fillmore"         , "delano"          union
+  select "fillmore"         , "grover"          union
+  select "eisenhower"       , "fillmore"        union
+  select "delano"           , "jackson";
+
+create table dogs as
+  select "abraham" as name, "long" as fur, 26 as height union
+  select "barack"         , "short"      , 52           union
+  select "clinton"        , "long"       , 47           union
+  select "delano"         , "long"       , 46           union
+  select "eisenhower"     , "short"      , 35           union
+  select "fillmore"       , "curly"      , 32           union
+  select "grover"         , "short"      , 28           union
+  select "herbert"        , "curly"      , 31           union
+  select "jackson"        , "long"       , 43;
+
+-- All triples of dogs with the same fur that have increasing heights
+
+select "=== Question 1 ===";
+SELECT a.name, b.name, c.name FROM dogs AS a, dogs AS b, dogs AS c
+  WHERE a.fur = b.fur AND a.fur = c.fur AND b.fur = c.fur 
+        AND a.name != b.name AND a.name != c.name AND b.name != c.name
+        AND a.height < b.height AND b.height < c.height;
+
+-- Expected output:
+--   abraham|delano|clinton
+--   abraham|jackson|clinton
+--   abraham|jackson|delano
+--   grover|eisenhower|barack
+--   jackson|delano|clinton
+
+-- The sum of the heights of at least 3 dogs with the same fur, ordered by sum
+
+select "=== Question 2 ===";
+WITH 
+  dogs_sum_height(names, n, sum_height, last_height, type) AS (
+	SELECT name, 1, height, height, fur FROM dogs UNION
+	SELECT a.names || ', ' || b.name, n+1, sum_height+b.height, b.height, b.fur
+	  FROM dogs_sum_height AS a, dogs AS b
+	  WHERE a.type = b.fur and a.last_height < b.height 
+	)
+SELECT type, sum_height FROM dogs_sum_height WHERE n >= 3 ORDER BY sum_height;
+
+-- Expected output:
+--   long|115
+--   short|115
+--   long|116
+--   long|119
+--   long|136
+--   long|162
+
+-- The terms of g(n) where g(n) = g(n-1) + 2*g(n-2) + 3*g(n-3) and g(n) = n if n <= 3
+
+select "=== Question 3 ===";
+WITH 
+  func(previous, current, future) AS (
+	SELECT 1, 2, 3 UNION
+	SELECT current, future, future + 2 * current + 3 * previous 
+	  FROM func WHERE current < 9500000
+	)
+SELECT previous FROM func;
+
+-- Expected output:
+--   1
+--   2
+--   3
+--   10
+--   22
+--   51
+--   125
+--   293
+--   696
+--   1657
+--   ...
+--   9426875
+
