@@ -1,0 +1,84 @@
+\chapter{NumPy, SciPy, and matplolib}
+
+\begin{abstract}
+Introduce Python's core numerical, scientific, and plotting packages.
+
+\begin{itemize}
+\item Fernando Pérez, Brian E. Granger, and John D. Hunter. "Python: an ecosystem for
+scientific computing." \emph{Computing in Science \& Engineering} 13, no. 2 (2011):
+13-21.
+\item Stéfan van der Walt, S. Chris Colbert, and Gael Varoquaux. "The NumPy array: a
+structure for efficient numerical computation." \emph{Computing in Science \&
+Engineering} 13, no. 2 (2011): 22-30.
+\item John D. Hunter. "Matplotlib: A 2D graphics environment." \emph{Computing
+in Science \& Engineering} 9, no. 3 (2007): 0090-95.
+\end{itemize}
+\end{abstract}
+
+\section{Introduction}
+\begin{itemize}
+\item \url{http://docs.scipy.org/doc/}
+\item \url{http://matplotlib.org/gallery.html}
+\item \url{https://scipy-lectures.github.io/}
+\item \url{https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks}
+\end{itemize}
+
+\section{NumPy and matplotlib}
+
+\subsection{Exercise: lock 'n load}
+For this exercise please work through Stéfan van der Walt's NumPy
+lock 'n load.
+
+\begin{itemize}
+\item \url{https://github.com/stefanv/teaching/tree/master/2008_numpy_load_n_load}
+\end{itemize}
+
+\subsection{ndarray}
+
+\begin{itemize}
+\item \url{http://scipy-lectures.github.io/intro/numpy/array_object.html}
+\item \url{http://scipy-lectures.github.io/intro/numpy/operations.html}
+\end{itemize}
+
+\subsection{2D plotting}
+
+\begin{itemize}
+\item \url{http://scipy-lectures.github.io/intro/matplotlib/matplotlib.html}
+\end{itemize}
+
+\section{Example: random walk redux}
+
+Recall the random walk simulation from 243.
+
+%% begin.rcode p1, engine='python'
+%% end.rcode
+
+Here is a version implemented as a class.
+
+%% begin.rcode p2, engine='python'
+%% end.rcode
+
+\subsection{Exercise: Sierpinski triangle}
+Write a Python script to construct Sierpinski triangle using the following
+algorithm:
+
+\begin{enumerate}
+\item Choose 3 points in the plane (forming a triangle).
+\item Choose another "starting" pointing (current position).
+\item Randomly choose one of the corners of the triangle.
+\item Move halfway from your current position to the selected corner.
+\item Plot the new current position.
+\item Repeat from step 3 (for 100 times).
+\end{enumerate}
+
+\section{SciPy}
+
+\begin{itemize}
+\item \url{http://scipy-lectures.github.io/intro/scipy.html}
+\end{itemize}
+
+\section{Exercise: State of the Union addresses}
+
+For this exercise, you will revisit the State of the Union Addresses.
+Load the data, use whatever tools and analysis you want, and use matplotlib
+to make plots.
